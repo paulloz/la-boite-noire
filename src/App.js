@@ -1,28 +1,46 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
+import blueGrey from '@material-ui/core/colors/blueGrey';
+import brown from '@material-ui/core/colors/brown';
+import CssBaseline from '@material-ui/core/CssBaseline';
+
+import Header from './Header';
+import DataTable from './DataTable';
+
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    constructor() {
+        super();
+
+        this.theme = createMuiTheme({
+            palette: {
+                primary: blueGrey,
+                secondary: brown
+            },
+            typography: {
+                useNextVariants: true
+            }
+        });
+    }
+
+    render() {
+        return (
+            <MuiThemeProvider theme={this.theme}>
+                <div className="App">
+                    <CssBaseline />
+                    <Header />
+                    <main>
+                        <p>
+                            Lorem ipsum dolor sit amet consectuetur adipiscing elit.
+                        </p>
+                        <DataTable />
+                    </main>
+                </div>
+            </MuiThemeProvider>
+        );
+    }
 }
 
 export default App;
