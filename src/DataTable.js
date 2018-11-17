@@ -36,7 +36,7 @@ class DataTable extends Component {
                 }, {});
             };
 
-            this.setState({ data : groupBy(data, 'donnees') });
+            this.setState({ data: groupBy(data, 'donnees') });
         });
     }
 

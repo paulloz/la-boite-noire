@@ -5,6 +5,10 @@ main {
   margin-top: 80px;
 }
 
+main p.italic {
+  font-style: italic;
+}
+
 @media(min-width: 900px) {
   main {
     width: 900px;

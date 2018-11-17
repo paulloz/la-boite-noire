@@ -23,6 +23,20 @@ class App extends Component {
                 useNextVariants: true
             }
         });
+
+        this.state = {
+            description: "",
+            partners: []
+        }
+    }
+
+    componentDidMount() {
+        fetch("/data.json").then(response => response.json()).then(data => {
+            this.setState({
+                description: data.description,
+                partners: Object.keys(data.partners).map(k => { return { name: k, href: data.partners[k] }; })
+            });
+        });
     }
 
     render() {
@@ -32,8 +46,20 @@ class App extends Component {
                     <CssBaseline />
                     <Header />
                     <main>
-                        <p>
-                            Lorem ipsum dolor sit amet consectuetur adipiscing elit.
+                        <p>{this.state.description}</p>
+                        <p className="italic">
+                            Une initiative du <a href="http://lepanierasalade.fr/">Panier à salade</a>
+                            {this.state.partners.map((partner, i) => {
+                                return (
+                                    <a key={i} href={partner.href} target="_blank" rel="noopener noreferrer" title={partner.name}>{partner.name}</a>
+                                );
+                            }).reduce((m, n, i, x) => {
+                                return m == null ? [", avec ", n] : [...m, (x.length > 1 && i === x.length - 1 ? " et " : ", "), n];
+                            }, null)}
+                            .
+                        </p>
+                        <p className="italic">
+                            Réalisé par <a href="http://pauljoannon.com">Paul Joannon</a>, le code source de ce site est disponible <a href="https://github.com/paulloz/police-data-index">ici</a>.
                         </p>
                         <DataTable />
                     </main>
