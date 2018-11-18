@@ -1,8 +1,8 @@
 .dot {
     display: inline-block;
-    width: 15px;
+    width: 20px;
     height: 20px;
-    border-radius: 33%;
+    border-radius: 100%;
 
     margin-right: 5px;
 }

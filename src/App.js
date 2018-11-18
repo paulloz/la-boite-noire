@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
-import blueGrey from '@material-ui/core/colors/blueGrey';
-import brown from '@material-ui/core/colors/brown';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 import Header from './Header';
@@ -16,8 +14,9 @@ class App extends Component {
 
         this.theme = createMuiTheme({
             palette: {
-                primary: blueGrey,
-                secondary: brown
+                primary: {
+                    main: '#EC2024'
+                }
             },
             typography: {
                 useNextVariants: true
@@ -56,10 +55,7 @@ class App extends Component {
                             }).reduce((m, n, i, x) => {
                                 return m == null ? [", avec ", n] : [...m, (x.length > 1 && i === x.length - 1 ? " et " : ", "), n];
                             }, null)}
-                            .
-                        </p>
-                        <p className="italic">
-                            Réalisé par <a href="http://pauljoannon.com">Paul Joannon</a>, le code source de ce site est disponible <a href="https://github.com/paulloz/police-data-index">ici</a>.
+                            , réalisée par <a href="http://pauljoannon.com">Paul Joannon</a>. Le code source de ce site est disponible <a href="https://github.com/paulloz/police-data-index">ici</a>.
                         </p>
                         <DataTable />
                     </main>

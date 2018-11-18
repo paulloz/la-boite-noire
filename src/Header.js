@@ -4,12 +4,14 @@ import AppBar from '@material-ui/core/AppBar';
 import ToolBar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
+import './Header.css';
+
 class Header extends Component {
     render() {
         return (
-            <AppBar position="fixed">
+            <AppBar position="fixed" className="header">
                 <ToolBar>
-                    <Typography variant="h6" color="inherit">
+                    <Typography variant="h5" color="inherit">
                         Police Data Index
                     </Typography>
                 </ToolBar>
