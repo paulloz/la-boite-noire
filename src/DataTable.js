@@ -52,8 +52,8 @@ class DataTable extends Component {
                     <TableRow>
                         <TableCell>Données</TableCell>
                         <TableCell>Branche</TableCell>
+                        <TableCell>Disponibilité</TableCell>
                         <TableCell>Origine</TableCell>
-                        <TableCell></TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -75,10 +75,10 @@ class DataTable extends Component {
                                                 : row['branche']
                                         }
                                     </TableCell>
-                                    <TableCell>{row['origine']}</TableCell>
                                     <TableCell className="nowrap">
                                         <Dots dispo={row['disponibilite']} granu={row['granularite']} tempo={row['temporalite']} />
                                     </TableCell>
+                                    <TableCell>{row['origine']}</TableCell>
                                 </TableRow>
                             );
                         });
