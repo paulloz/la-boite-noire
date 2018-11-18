@@ -30,7 +30,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-        fetch("/data.json").then(response => response.json()).then(data => {
+        fetch("./data.json").then(response => response.json()).then(data => {
             this.setState({
                 description: data.description,
                 partners: Object.keys(data.partners).map(k => { return { name: k, href: data.partners[k] }; })

@@ -24,7 +24,7 @@ class DataTable extends Component {
     }
 
     componentDidMount() {
-        dsv('\t', '/data.tsv', d => {
+        dsv('\t', './data.tsv', d => {
             if (d['lien'].length <= 0)
                 d['lien'] = null;
             return d;
