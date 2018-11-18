@@ -20,12 +20,14 @@ class Dot extends Component {
             green: green[400]
         }
         this.defaultColor = this.colors.black;
+
+        this.tooltipMap = {};
     }
 
     render() {
         const bColor = this.colorMap[this.props.value] || this.defaultColor;
         return (
-            <Tooltip title={(this.props.value || 'N/A').replace(/\b\w/, c => c.toUpperCase())}>
+            <Tooltip title={this.tooltipMap[bColor]}>
                 <div className='dot' style={{backgroundColor:bColor}}></div>
             </Tooltip>
         );
@@ -41,6 +43,11 @@ class DispoDot extends Dot {
             'statistiques seulement': this.colors.orange,
             'base accessible': this.colors.green
         }
+
+        this.tooltipMap[this.defaultColor] = 'Aucune information';
+        this.tooltipMap[this.colors.red] = 'Information non communiquée';
+        this.tooltipMap[this.colors.orange] = 'Statistiques seulement';
+        this.tooltipMap[this.colors.green] = 'Base de données accessible';
     }
 }
 
@@ -53,6 +60,11 @@ class GranuDot extends Dot {
             'départementale': this.colors.orange,
             'locale': this.colors.green
         }
+
+        this.tooltipMap[this.defaultColor] = 'N/A';
+        this.tooltipMap[this.colors.red] = 'Échelle nationale';
+        this.tooltipMap[this.colors.orange] = 'Échelle départementale';
+        this.tooltipMap[this.colors.green] = 'Échelle locale';
     }
 }
 
@@ -65,6 +77,11 @@ class TempoDot extends Dot {
             'mensuelle': this.colors.orange,
             'quotidien': this.colors.green
         };
+
+        this.tooltipMap[this.defaultColor] = 'N/A';
+        this.tooltipMap[this.colors.red] = 'Mise à jour annuelle';
+        this.tooltipMap[this.colors.orange] = 'Mise à jour mensuelle';
+        this.tooltipMap[this.colors.green] = 'Mise à jour régulière';
     }
 }
 
