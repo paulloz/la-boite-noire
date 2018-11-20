@@ -12,76 +12,96 @@ class Dot extends Component {
     constructor() {
         super();
 
-        this.colorMap = {};
-        this.colors = {
-            black: grey[900],
-            red: red[400],
-            orange: orange[400],
-            green: green[400]
-        }
-        this.defaultColor = this.colors.black;
+        this.colors = [grey[900], red[400], orange[400], green[400]];
+        this.color = this.colors[0];
 
-        this.tooltipMap = {};
+        this.tooltip = 'N/A';
     }
 
     render() {
-        const bColor = this.colorMap[this.props.value] || this.defaultColor;
         return (
-            <Tooltip title={this.tooltipMap[bColor]}>
-                <div className='dot' style={{backgroundColor:bColor}}></div>
+            <Tooltip title={this.tooltip}>
+                <div className='dot' style={{backgroundColor:this.color}}></div>
             </Tooltip>
         );
     }
 }
 
 class DispoDot extends Dot {
-    constructor() {
+    constructor(props) {
         super();
 
-        this.colorMap = {
-            'non communiquée': this.colors.red,
-            'statistiques seulement': this.colors.orange,
-            'base accessible': this.colors.green
+        switch (props.value) {
+            case 'non communiquée': {
+                this.color = this.colors[1];
+                this.tooltip = 'Base de données non-communiquée';
+                break;
+            }
+            case 'statistiques seulement': {
+                this.color = this.colors[2];
+                this.tooltip = 'Statistiques seulement';
+                break;
+            }
+            case 'base accessible': {
+                this.color = this.colors[3];
+                this.tooltip = 'Base de données accessible';
+                break;
+            }
+            default: {
+                this.tooltip = 'Aucune base de données connue';
+                break;
+            }
         }
-
-        this.tooltipMap[this.defaultColor] = 'Aucune information';
-        this.tooltipMap[this.colors.red] = 'Information non communiquée';
-        this.tooltipMap[this.colors.orange] = 'Statistiques seulement';
-        this.tooltipMap[this.colors.green] = 'Base de données accessible';
     }
 }
 
 class GranuDot extends Dot {
-    constructor() {
+    constructor(props) {
         super();
 
-        this.colorMap = {
-            'nationale': this.colors.red,
-            'départementale': this.colors.orange,
-            'locale': this.colors.green
+        switch (props.value) {
+            case 'nationale': {
+                this.color = this.colors[1];
+                this.tooltip = 'Échelle nationale';
+                break;
+            }
+            case 'départementale': {
+                this.color = this.colors[2];
+                this.tooltip = 'Échelle départementale';
+                break;
+            }
+            case 'locale': {
+                this.color = this.colors[3];
+                this.tooltip = 'Échelle locale';
+                break;
+            }
+            default: break;
         }
-
-        this.tooltipMap[this.defaultColor] = 'N/A';
-        this.tooltipMap[this.colors.red] = 'Échelle nationale';
-        this.tooltipMap[this.colors.orange] = 'Échelle départementale';
-        this.tooltipMap[this.colors.green] = 'Échelle locale';
     }
 }
 
 class TempoDot extends Dot {
-    constructor() {
+    constructor(props) {
         super();
 
-        this.colorMap = {
-            'annuelle': this.colors.red,
-            'mensuelle': this.colors.orange,
-            'quotidien': this.colors.green
-        };
-
-        this.tooltipMap[this.defaultColor] = 'N/A';
-        this.tooltipMap[this.colors.red] = 'Mise à jour annuelle';
-        this.tooltipMap[this.colors.orange] = 'Mise à jour mensuelle';
-        this.tooltipMap[this.colors.green] = 'Mise à jour régulière';
+        switch (props.value) {
+            case 'annuelle': {
+                this.color = this.colors[1];
+                this.tooltip = 'Mise à jour annuelle';
+                break;
+            }
+            case 'mensuelle': {
+                this.color = this.colors[2];
+                this.tooltip = 'Mise à jour mensuelle';
+                break;
+            }
+            case 'quotidien': {
+                this.color = this.colors[3];
+                this.tooltip = 'Mise à jour quotidienne';
+                break;
+            }
+            default: break;
+        }
     }
 }
 
