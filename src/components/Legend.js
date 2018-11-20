@@ -38,7 +38,7 @@ class Legend extends Component {
                 <Hidden only={['md', 'lg', 'xl']}>
                     {[0, 1, 2].map(i => {
                         return (
-                            <table className='legend'>
+                            <table key={i} className='legend'>
                                 <thead><tr><td colSpan='2'>{this.state.titles[i]}</td></tr></thead>
                                 <tbody>
                                     {this.state.data.map((c, j) => {
