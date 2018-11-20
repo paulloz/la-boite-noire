@@ -1,0 +1,8 @@
+header.header img {
+    height: 48px;
+    margin-right: 8px;
+}
+
+header.header h5 {
+    font-weight: bold;
+}

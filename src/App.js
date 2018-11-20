@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
-import Header from './Header';
-import DataTable from './DataTable';
+import Header from './components/Header';
+import DataTable from './components/DataTable';
 
 import './App.css';
 
