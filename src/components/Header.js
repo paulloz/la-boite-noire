@@ -11,6 +11,7 @@ class Header extends Component {
         return (
             <AppBar position="fixed" className="header">
                 <ToolBar>
+                    <img src={process.env.PUBLIC_URL + "/panier_blanc.png"} alt=""></img>
                     <Typography variant="h5" color="inherit">
                         Police Data Index
                     </Typography>
