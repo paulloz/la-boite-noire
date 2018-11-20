@@ -27,8 +27,8 @@ main p {
   font-weight: bold !important;
 }
 
-@media(min-width: 900px) {
+@media(min-width: 960px) {
   main {
-    width: 900px;
+    width: 960px;
   }
 }

@@ -9,38 +9,3 @@
     cursor: help;
 }
 
-table.legend {
-    margin: 1em auto;
-}
-
-table.legend thead td {
-    font-weight: bold;
-    text-align: center;
-}
-
-table.legend tbody tr {
-    padding: 0.5em 0;
-}
-
-table.legend tbody td {
-    vertical-align: middle;
-}
-
-table.legend tbody td:nth-child(odd) {
-    width: 35px;
-}
-
-table.legend tbody td:nth-child(even) {
-    padding-right: 20px;
-}
-
-table.legend tbody td .dot {
-    width: 30px;
-    height: 30px;
-
-    cursor: default;
-
-    float: left;
-
-    margin: 0;
-}
