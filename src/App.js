@@ -9,7 +9,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import Header from './components/Header';
 import DataTable from './components/DataTable';
-import { Legend } from './components/Dots';
+import Legend from './components/Legend';
 
 import './App.css';
 
