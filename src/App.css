@@ -13,8 +13,18 @@ main a {
   border-bottom: 2px solid #EC2024;
 }
 
-main p.italic {
-  font-style: italic;
+main p {
+  padding: 0 1em;
+
+  line-height: 1.3em;
+}
+
+.italic {
+  font-style: italic !important;
+}
+
+.bold {
+  font-weight: bold !important;
 }
 
 @media(min-width: 900px) {

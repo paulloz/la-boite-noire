@@ -10,3 +10,16 @@ table.datatable td.nowrap {
 .datatable--loading {
     margin: 1em auto;
 }
+
+.datatable--mobile {
+    margin: 2em;
+}
+
+.datatable--mobile h6 {
+    margin-bottom: .3em;
+}
+
+.datatable--mobile .dot {
+    margin-top: .4em;
+    margin-bottom: .8em;
+}
