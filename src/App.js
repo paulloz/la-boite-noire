@@ -2,9 +2,13 @@ import React, { Component } from 'react';
 
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import ExpansionPanel from '@material-ui/core/ExpansionPanel';
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 
 import Header from './components/Header';
 import DataTable from './components/DataTable';
+import { Legend } from './components/Dots';
 
 import './App.css';
 
@@ -25,7 +29,9 @@ class App extends Component {
 
         this.state = {
             description: "",
-            partners: []
+            partners: [],
+            legendExpanded: false,
+            legendExpansionSummary: 'Afficher la légende'
         }
     }
 
@@ -35,6 +41,13 @@ class App extends Component {
                 description: data.description,
                 partners: Object.keys(data.partners).map(k => { return { name: k, href: data.partners[k] }; })
             });
+        });
+    }
+
+    handleLegendExpansionChange(expanded) {
+        this.setState({
+            legendExpanded: expanded,
+            legendExpansionSummary: `${expanded ? 'Fermer' : 'Afficher'} la légende`
         });
     }
 
@@ -57,6 +70,12 @@ class App extends Component {
                             }, null)}
                             , réalisée par <a href="http://pauljoannon.com">Paul Joannon</a>. Le code source de ce site est disponible <a href="https://github.com/paulloz/police-data-index">ici</a>.
                         </p>
+                        <ExpansionPanel expanded={this.state.legendExpanded} onChange={(event, expanded) => this.handleLegendExpansionChange(expanded)}>
+                            <ExpansionPanelSummary>{this.state.legendExpansionSummary}</ExpansionPanelSummary>
+                            <ExpansionPanelDetails>
+                                <Legend />
+                            </ExpansionPanelDetails>
+                        </ExpansionPanel>
                         <DataTable />
                     </main>
                 </div>
