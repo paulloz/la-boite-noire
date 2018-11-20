@@ -55,11 +55,11 @@ class DataTable extends Component {
                 <Hidden only={['md', 'lg', 'xl']}>
                     {Object.keys(this.state.data).map((key, i) => {
                         return (
-                            <div className="datatable--mobile">
+                            <div className="datatable--mobile" key={i}>
                                 <Typography variant="subtitle1" className="bold">{key}</Typography>
                                 {this.state.data[key].map((row, j) => {
                                     return (
-                                        <div>
+                                        <div key={j}>
                                             {
                                                 row['lien'] != null
                                                     ? (<a href={row['lien']} target="_blank" rel="noopener noreferrer">{row['branche']}</a>)
