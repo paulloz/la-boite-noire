@@ -34,7 +34,7 @@ class Legend extends Component {
 
     render() {
         return (
-            <div>
+            <div style={{width:"100%"}}>
                 <Hidden only={['md', 'lg', 'xl']}>
                     {[0, 1, 2].map(i => {
                         return (

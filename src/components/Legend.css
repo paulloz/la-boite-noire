@@ -1,10 +1,12 @@
 table.legend {
-    margin: 1em auto;
+    font-size: .8em;
+    margin: 0 auto 1em auto;
 }
 
 table.legend thead td {
     font-weight: bold;
-    text-align: center;
+    text-indent: 25px;
+    padding-bottom: 1em;
 }
 
 table.legend tbody tr {
@@ -16,7 +18,7 @@ table.legend tbody td {
 }
 
 table.legend tbody td:nth-child(odd) {
-    width: 35px;
+    width: 25px;
 }
 
 table.legend tbody td:nth-child(even) {
@@ -24,8 +26,8 @@ table.legend tbody td:nth-child(even) {
 }
 
 table.legend tbody td .dot {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
 
     cursor: default;
 

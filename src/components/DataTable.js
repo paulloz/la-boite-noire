@@ -78,7 +78,7 @@ class DataTable extends Component {
                         <TableHead>
                         <TableRow>
                             <TableCell>Données</TableCell>
-                            <TableCell>Branche</TableCell>
+                            <TableCell>Service</TableCell>
                             <TableCell>Disponibilité</TableCell>
                             <TableCell>Origine</TableCell>
                         </TableRow>
