@@ -45,7 +45,7 @@ class App extends Component {
                     <CssBaseline />
                     <Header />
                     <main>
-                        <p>{this.state.description}</p>
+                        <p dangerouslySetInnerHTML={{__html: this.state.description }}></p>
                         <p className="italic">
                             Une initiative du <a href="http://lepanierasalade.fr/">Panier à salade</a>
                             {this.state.partners.map((partner, i) => {
