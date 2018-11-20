@@ -5,6 +5,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import Header from './components/Header';
 import DataTable from './components/DataTable';
@@ -71,7 +72,7 @@ class App extends Component {
                             , réalisée par <a href="http://pauljoannon.com">Paul Joannon</a>. Le code source de ce site est disponible <a href="https://github.com/paulloz/police-data-index">ici</a>.
                         </p>
                         <ExpansionPanel expanded={this.state.legendExpanded} onChange={(event, expanded) => this.handleLegendExpansionChange(expanded)}>
-                            <ExpansionPanelSummary>{this.state.legendExpansionSummary}</ExpansionPanelSummary>
+                            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>{this.state.legendExpansionSummary}</ExpansionPanelSummary>
                             <ExpansionPanelDetails>
                                 <Legend />
                             </ExpansionPanelDetails>
