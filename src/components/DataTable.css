@@ -6,3 +6,7 @@ table.datatable > tbody > tr > td:first-child {
 table.datatable td.nowrap {
     white-space: nowrap;
 }
+
+.datatable--loading {
+    margin: 1em auto;
+}

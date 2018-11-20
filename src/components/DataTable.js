@@ -43,11 +43,13 @@ class DataTable extends Component {
     render() {
         if (this.state.data == null)
             return (
-                <CircularProgress />
+                <p style={{textAlign: 'center'}}>
+                    <CircularProgress className='datatable--loading' />
+                </p>
             );
 
         return (
-            <Table className="datatable">
+            <Table className='datatable'>
                 <TableHead>
                     <TableRow>
                         <TableCell>Données</TableCell>
