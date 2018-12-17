@@ -13,7 +13,7 @@ class Header extends Component {
                 <ToolBar>
                     <img src={process.env.PUBLIC_URL + "/panier_blanc.png"} alt=""></img>
                     <Typography variant="h5" color="inherit">
-                        Police Data Index
+                        La boîte noire
                     </Typography>
                 </ToolBar>
             </AppBar>
