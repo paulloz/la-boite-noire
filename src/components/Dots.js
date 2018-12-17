@@ -75,7 +75,10 @@ class GranuDot extends Dot {
                 this.tooltip = 'Échelle locale';
                 break;
             }
-            default: break;
+            default: {
+                this.tooltip = 'Aucune précision géographique'
+                break;
+            }
         }
     }
 }
@@ -100,7 +103,10 @@ class TempoDot extends Dot {
                 this.tooltip = 'Mise à jour quotidienne';
                 break;
             }
-            default: break;
+            default: {
+                this.tooltip = 'Aucune mise à jour';
+                break;
+            }
         }
     }
 }
