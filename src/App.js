@@ -20,7 +20,7 @@ class App extends Component {
         this.theme = createMuiTheme({
             palette: {
                 primary: {
-                    main: '#EC2024'
+                    main: '#333'
                 }
             },
             typography: {
