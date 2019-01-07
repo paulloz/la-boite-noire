@@ -8,6 +8,7 @@ do
     if [ $(md5sum "${BASEDIR}${FILE}" | cut -f1 -d' ') != $(wget -q "${BASEURL}${FILE}" -O- | md5sum | cut -f1 -d' ') ]; then
         UPDATE="${UPDATE}$(if [ ${#UPDATE} -gt 0 ]; then echo " "; else echo ""; fi)${FILE}"
         wget -q "${BASEURL}${FILE}" -P ${BASEDIR}
+        mv "${BASEDIR}${FILE}.1" "${BASEDIR}${FILE}"
     fi;
 done
 
